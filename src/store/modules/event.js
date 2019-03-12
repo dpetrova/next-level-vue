@@ -64,11 +64,13 @@ export default {
       if (event) {
         // If we do, set the event
         commit('SET_EVENT', event)
+        return event
       } else {
         // If not, get it with the API.
         return EventService.getEvent(id)
           .then(response => {
             commit('SET_EVENT', response.data)
+            return response.data
           })
           .catch(error => {
             //console.log('There was an error:', error.response)

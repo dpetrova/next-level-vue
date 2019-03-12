@@ -15,16 +15,12 @@
       <p>{{ event.description }}</p>
       <h2>
         Attendees
-        <span class="badge -fill-gradient">
-          {{ event.attendees ? event.attendees.length : 0 }}
-        </span>
+        <span
+          class="badge -fill-gradient"
+        >{{ event.attendees ? event.attendees.length : 0 }}</span>
       </h2>
       <ul class="list-group">
-        <li
-          v-for="(attendee, index) in event.attendees"
-          :key="index"
-          class="list-item"
-        >
+        <li v-for="(attendee, index) in event.attendees" :key="index" class="list-item">
           <b>{{ attendee.name }}</b>
         </li>
       </ul>
@@ -34,23 +30,29 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import NProgress from 'nprogress'
-import store from '@/store/store'
+//import NProgress from 'nprogress'
+//import store from '@/store/store'
 
 export default {
-  props: ['id'],
+  //props: ['id'],
+  props: {
+    event: {
+      type: Object,
+      required: true
+    }
+  }
   /* Solution #2 to show progress bar: In-Component Route Guards */
   //this guard is called before the component is created (doesn’t have access to this)
-  beforeRouteEnter(routeTo, routeFrom, next) {
-    NProgress.start() // Start the progress bar
-    store.dispatch('event/fetchEvent', routeTo.params.id).then(() => {
-      NProgress.done() // When the action is done complete progress bar
-      next() // Only once this is called does the navigation continue
-    })
-  },
-  computed: mapState({
-    event: state => state.event.event
-  })
+  // beforeRouteEnter(routeTo, routeFrom, next) {
+  //   NProgress.start() // Start the progress bar
+  //   store.dispatch('event/fetchEvent', routeTo.params.id).then(() => {
+  //     NProgress.done() // When the action is done complete progress bar
+  //     next() // Only once this is called does the navigation continue
+  //   })
+  // },
+  // computed: mapState({
+  //   event: state => state.event.event
+  // })
   // created() {
   //   this.fetchEvent(this.id)
   // },
