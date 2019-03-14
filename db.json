@@ -111,6 +111,216 @@
       "date": "2019-03-09T19:15:00.000Z",
       "time": "10:00",
       "attendees": []
+    },
+    {
+      "id": 3646213,
+      "category": "food",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Dinner",
+      "description": "Prepare something to eat",
+      "location": "Home",
+      "date": "2019-03-14T16:52:00.000Z",
+      "time": "20:00",
+      "attendees": []
+    },
+    {
+      "id": 5969627,
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Feed a cat",
+      "description": "Feed a street cat",
+      "location": "street",
+      "date": "2019-03-20T16:58:00.000Z",
+      "time": "18:00",
+      "attendees": []
+    },
+    {
+      "id": 1139058,
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Learn C#",
+      "description": "just learn",
+      "location": "home",
+      "date": "2019-03-27T17:02:00.000Z",
+      "time": "18:00",
+      "attendees": []
+    },
+    {
+      "id": 5544788,
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Learn Java",
+      "description": "just learn",
+      "location": "home",
+      "date": "2019-04-26T16:03:00.000Z",
+      "time": "23:00",
+      "attendees": []
+    },
+    {
+      "id": 7560363,
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Learn JS",
+      "description": "just learn",
+      "location": "home",
+      "date": "2019-08-09T16:07:00.000Z",
+      "time": "11:00",
+      "attendees": []
+    },
+    {
+      "id": 9335605,
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Learn Math",
+      "description": "just learn",
+      "location": "school",
+      "date": "2019-10-19T16:10:00.000Z",
+      "time": "8:00",
+      "attendees": []
+    },
+    {
+      "id": 8098466,
+      "category": "housing",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Regular cleaning",
+      "description": "Clean the house",
+      "location": "home",
+      "date": "2019-04-09T16:12:00.000Z",
+      "time": "10:00",
+      "attendees": []
+    },
+    {
+      "id": 7288931,
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Do homework",
+      "description": "...",
+      "location": "home",
+      "date": "2019-03-21T17:15:00.000Z",
+      "time": "17:00",
+      "attendees": []
+    },
+    {
+      "id": 3024069,
+      "category": "food",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Pizza",
+      "description": "make a pizza",
+      "location": "home",
+      "date": "2019-03-30T17:16:00.000Z",
+      "time": "17:00",
+      "attendees": []
+    },
+    {
+      "id": 2475963,
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Swim",
+      "description": "....",
+      "location": "black sea",
+      "date": "2019-08-30T16:18:00.000Z",
+      "time": "10:00",
+      "attendees": []
+    },
+    {
+      "id": 5621937,
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Play",
+      "description": "play outside",
+      "location": "outside",
+      "date": "2019-03-20T17:19:00.000Z",
+      "time": "16:00",
+      "attendees": []
+    },
+    {
+      "id": 4530077,
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Learn geometry",
+      "description": "just learn :)",
+      "location": "home",
+      "date": "2019-03-16T17:22:00.000Z",
+      "time": "12:00",
+      "attendees": []
+    },
+    {
+      "id": 685237,
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "bgwirb",
+      "description": "gregreg",
+      "location": "greg",
+      "date": "2019-03-06T17:27:00.000Z",
+      "time": "2:00",
+      "attendees": []
+    },
+    {
+      "id": 4734846,
+      "category": "food",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Panckakes",
+      "description": "make a breakfast",
+      "location": "home",
+      "date": "2019-03-05T17:30:00.000Z",
+      "time": "9:00",
+      "attendees": []
+    },
+    {
+      "id": 2643436,
+      "category": "animal welfare",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "svsav",
+      "description": "beb",
+      "location": "bwrb",
+      "date": "2019-03-14T17:33:00.000Z",
+      "time": "4:00",
+      "attendees": []
     }
   ]
 }

@@ -10,21 +10,33 @@
       <h3>Name & describe your event</h3>
       <div class="field">
         <label>Title</label>
-        <input v-model="event.title" type="text" placeholder="Add an event title">
+        <input
+          v-model="event.title"
+          type="text"
+          placeholder="Add an event title"
+        />
       </div>
       <div class="field">
         <label>Description</label>
-        <input v-model="event.description" type="text" placeholder="Add a description">
+        <input
+          v-model="event.description"
+          type="text"
+          placeholder="Add a description"
+        />
       </div>
       <h3>Where is your event?</h3>
       <div class="field">
         <label>Location</label>
-        <input v-model="event.location" type="text" placeholder="Add a location">
+        <input
+          v-model="event.location"
+          type="text"
+          placeholder="Add a location"
+        />
       </div>
       <h3>When is your event?</h3>
       <div class="field">
         <label>Date</label>
-        <datepicker v-model="event.date" placeholder="Select a date"/>
+        <datepicker v-model="event.date" placeholder="Select a date" />
       </div>
       <div class="field">
         <label>Select a time</label>
@@ -32,24 +44,15 @@
           <option v-for="time in times" :key="time">{{ time }}</option>
         </select>
       </div>
-      <input type="submit" class="button -fill-gradient" value="Submit">
+      <input type="submit" class="button -fill-gradient" value="Submit" />
     </form>
-
-    <!-- <p>This event is created by {{ userName }}</p> -->
-    <!-- <p>This event is created by {{ user.name }}</p> -->
-    <!-- <ul>
-      <li v-for="cat in categories" :key="cat">{{ cat }}</li>
-    </ul>
-    <p>There are {{ catCount }} categories.</p>
-    <input type="number" v-model.number="incrementBy">-->
-    <!-- using the .number modifier to typecast the input value as a number -->
-    <!-- <BaseButton @click.native="incrementCount">Increment Count</BaseButton> -->
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters } from 'vuex'
 import Datepicker from 'vuejs-datepicker'
+import NProgress from 'nprogress'
 
 export default {
   data() {
@@ -60,7 +63,6 @@ export default {
     return {
       event: this.createFreshEvent(),
       times, //same as times: times
-      //categories: this.$store.state.categories,
       incrementBy: 0
     }
   },
@@ -72,13 +74,6 @@ export default {
     userId() {
       return this.$store.state.user.id
     },
-    // catLength() {
-    //   return this.$store.getters.catLength
-    // },
-    //retrieve some state based upon a parameter
-    // getEvent() {
-    //   return this.$store.getters['event/getEventById']
-    // },
     //from store (using spread operator)
     ...mapState({
       userName: state => state.user.name,
@@ -92,7 +87,6 @@ export default {
   },
   methods: {
     incrementCount() {
-      //this.$store.commit('INCREMENT_COUNT', this.incrementBy) //commit a mutation
       this.$store.dispatch('updateCount', this.incrementBy) //dispatch an action
     },
     createFreshEvent() {
@@ -111,6 +105,7 @@ export default {
       }
     },
     createEvent() {
+      NProgress.start() // <-- Start the progress bar
       this.$store
         .dispatch('event/createEvent', this.event)
         .then(() => {
@@ -123,6 +118,7 @@ export default {
           this.event = this.createFreshEventObject()
         })
         .catch(() => {
+          NProgress.done()
           //console.log('There was a problem creating your event.')
         })
     }

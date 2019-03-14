@@ -8,7 +8,9 @@ const apiClient = axios.create({
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json'
-  }
+  },
+  //if our browser waits longer than 15 seconds for the API request to return, it’ll automatically throw an error that will lead to our NetworkIssue component
+  timeout: 15000
 })
 
 /* Solution #1 to show progress bar: Axios interceptors */
