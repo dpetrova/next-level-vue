@@ -2,11 +2,13 @@
   <div>
     <h1>Create Event</h1>
     <form @submit.prevent="createEvent">
-      >
-      <label>Select a category</label>
-      <select v-model="event.category">
-        <option v-for="cat in categories" :key="cat">{{ cat }}</option>
-      </select>
+      <!-- using v-model here allows us to listen for the 'input' event that was sent up from BaseSelect’s updateValue method -->
+      <!-- additionally, v-model allows us to pass in a value as a prop -->
+      <BaseSelect
+        v-model="event.category"
+        label="Select a category"
+        :options="categories"
+      />
       <h3>Name & describe your event</h3>
       <BaseInput
         v-model="event.title"
