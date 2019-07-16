@@ -43,8 +43,14 @@
           <option v-for="time in times" :key="time">{{ time }}</option>
         </select>
       </div>
-      <BaseButton @click="createEvent" />
+      <BaseButton
+        type="submit"
+        buttonClass="-fill-gradient"
+        :disabled="!event.title"
+      />
     </form>
+    <!-- check adding dynamic event listeners  -->
+    <BaseButton @click="checkListeners">Check listeners</BaseButton>
   </div>
 </template>
 
@@ -120,6 +126,9 @@ export default {
           NProgress.done()
           //console.log('There was a problem creating your event.')
         })
+    },
+    checkListeners() {
+      alert('Listeners working :)')
     }
   },
   components: {
