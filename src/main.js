@@ -5,6 +5,7 @@ import router from './router'
 import store from './store/store'
 import 'nprogress/nprogress.css'
 import Vuelidate from 'vuelidate' //use for form validation
+import DateFilter from './filters/date' //filter for date
 
 Vue.use(Vuelidate)
 
@@ -44,6 +45,9 @@ requireComponent.keys().forEach(fileName => {
 /*
  End
  */
+
+//globally register a filter
+Vue.filter('date', DateFilter)
 
 new Vue({
   router,
