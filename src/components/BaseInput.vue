@@ -14,12 +14,15 @@
 </template>
 
 <script>
+import { formFieldMixin } from '../mixins/formFieldMixin' // import mixin
+
 export default {
-  inheritAttrs: false, //turn off this automatic inheritance
-  props: {
-    value: [String, Number],
-    label: String
-  },
+  //we import inheritAttrs, props, methods from mixin
+  //inheritAttrs: false, //turn off this automatic inheritance
+  // props: {
+  //   value: [String, Number],
+  //   label: String
+  // },
   computed: {
     //resolving conflict with @input="updateValue" and :value="event.title", @input="(value) => { event.title = value }" which is v-model=event.title
     listeners() {
@@ -29,11 +32,12 @@ export default {
       }
     }
   },
-  methods: {
-    updateValue(event) {
-      // <-- method triggered by input event
-      this.$emit('input', event.target.value)
-    }
-  }
+  // methods: {
+  //   updateValue(event) {
+  //     // <-- method triggered by input event
+  //     this.$emit('input', event.target.value)
+  //   }
+  // },
+  mixins: [formFieldMixin] // register mixin
 }
 </script>
