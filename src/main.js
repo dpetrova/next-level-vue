@@ -4,6 +4,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store/store'
 import 'nprogress/nprogress.css'
+import Vuelidate from 'vuelidate' //use for form validation
+
+Vue.use(Vuelidate)
 
 /* first way to register component globally */
 //import BaseIcon from '@/components/BaseIcon'

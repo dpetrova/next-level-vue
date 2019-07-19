@@ -2,7 +2,14 @@
   <div>
     <label v-if="label">{{ label }}</label>
     <!--  v-bind="$attrs" specifies this element will inherit attributes -->
-    <input :id="label" :value="value" @input="updateValue" v-bind="$attrs" />
+    <!-- add v-on="$listeners" to inheriting event listeners here -->
+    <input
+      :id="label"
+      :value="value"
+      @input="updateValue"
+      v-bind="$attrs"
+      v-on="listeners"
+    />
   </div>
 </template>
 
@@ -12,6 +19,15 @@ export default {
   props: {
     value: [String, Number],
     label: String
+  },
+  computed: {
+    //resolving conflict with @input="updateValue" and :value="event.title", @input="(value) => { event.title = value }" which is v-model=event.title
+    listeners() {
+      return {
+        ...this.$listeners,
+        input: this.updateValue
+      }
+    }
   },
   methods: {
     updateValue(event) {

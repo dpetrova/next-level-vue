@@ -2,7 +2,13 @@
   <div>
     <label v-if="label">{{ label }}</label>
     <!--  v-bind="$attrs" specifies this element will inherit attributes -->
-    <select :value="value" @change="updateValue" v-bind="$attrs">
+    <!-- add v-on="$listeners" to inheriting event listeners here -->
+    <select
+      :value="value"
+      @change="updateValue"
+      v-bind="$attrs"
+      v-on="$listeners"
+    >
       <!-- option === value - perform conditional check -->
       <option
         v-for="option in options"
